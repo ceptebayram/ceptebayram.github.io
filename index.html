@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cepte Bayram · İndirim linkleri</title>
+<meta name="description" content="Instagram'da paylaştığımız gerçek indirimlerin ürün linkleri.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="logo.png">
+<style>
+:root{--bg:#05080d;--card:#0d1520;--line:#1c2a3a;--text:#f1f5f9;--muted:#7b8a9e;--accent:#00e5ff;--lime:#c6ff00}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:640px;margin:0 auto;padding:20px 16px 40px}
+header{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+header img{width:56px;height:56px;border-radius:50%}
+h1{font-size:22px;margin:0}
+.sub{color:var(--muted);font-size:14px;margin:2px 0 0}
+.find{display:flex;gap:8px;margin:18px 0}
+.find input{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:12px 14px;font-size:16px}
+.find button{background:var(--accent);color:#05080d;border:0;border-radius:10px;padding:0 18px;font-weight:700;font-size:15px}
+.deal{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px;scroll-margin-top:12px}
+.deal.hit{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.deal>a img{width:112px;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block}
+.info{flex:1;min-width:0;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.no{background:var(--lime);color:#05080d;font-weight:800;border-radius:6px;padding:1px 7px}
+.name{font-weight:600;margin:6px 0 4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.price{font-size:22px;font-weight:800}
+.price small{font-size:13px;color:var(--accent);font-weight:600;margin-left:4px}
+.old{color:var(--muted);font-size:14px}
+.old s{text-decoration-color:var(--accent)}
+.store{color:var(--muted);font-size:13px;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.go{margin-top:auto;padding-top:10px}
+.go a{display:block;text-align:center;background:var(--accent);color:#05080d;font-weight:700;text-decoration:none;border-radius:10px;padding:10px}
+.ended{opacity:.55}
+.ended .go a{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.tag{background:#3a1d24;color:#ff8fa3;font-weight:700;border-radius:6px;padding:1px 7px}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;margin-top:24px;line-height:1.5}
+</style></head>
+<body><main>
+<header><img src="logo.png" alt=""><div><h1>Cepte Bayram</h1>
+<p class="sub">Instagram'da paylaştığımız indirimlerin linkleri</p></div></header>
+<form class="find" onsubmit="go(event)"><input id="q" inputmode="numeric" placeholder="Gönderideki numara, ör. 12">
+<button>Bul</button></form>
+<p class="empty">Henüz paylaşılan indirim yok.</p>
+<footer>Fiyat geçmişine bakarak bulduğumuz gerçek indirimler. Fiyatlar paylaşım anındadır; mağazada değişmiş olabilir.
+Reklam değildir, hiçbir mağazayla iş birliğimiz yok, linklerden komisyon almıyoruz.<br>Son güncelleme: 05.11.2026 14:35</footer>
+</main><script>
+function go(e){e&&e.preventDefault();var v=(document.getElementById('q').value.match(/\d+/)||[])[0];if(!v)return;
+var el=document.getElementById('n'+v);document.querySelectorAll('.hit').forEach(function(x){x.classList.remove('hit')});
+if(el){el.classList.add('hit');el.scrollIntoView({behavior:'smooth'})}else alert('#'+v+' bulunamadı (süresi geçmiş olabilir).')}
+function fromHash(){if(location.hash.match(/^#\d+$/)){document.getElementById('q').value=location.hash.slice(1);go()}}
+window.addEventListener('load',fromHash);window.addEventListener('hashchange',fromHash)
+</script></body></html>
